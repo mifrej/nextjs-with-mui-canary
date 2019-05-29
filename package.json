@@ -5,8 +5,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/styles": "latest",
-    "@zeit/next-typescript": "latest",
-    "next": "latest",
+    "next": "8.1.1-canary.40",
     "react": "latest",
     "react-dom": "latest"
   },
