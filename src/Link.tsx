@@ -6,7 +6,7 @@ import { withRouter } from 'next/router';
 import NextLink from 'next/link';
 import MuiLink from '@material-ui/core/Link';
 
-function NextComposed(props) {
+function NextComposed(props: any) {
   const { as, href, prefetch, ...other } = props;
 
   return (
@@ -24,7 +24,7 @@ NextComposed.propTypes = {
 
 // A styled version of the Next.js Link component:
 // https://nextjs.org/docs/#with-link
-function Link(props) {
+function Link(props: any) {
   const { activeClassName, router, className: classNameProps, naked, ...other } = props;
 
   const className = clsx(classNameProps, {
