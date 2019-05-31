@@ -4,21 +4,8 @@ import { ServerStyleSheets } from '@material-ui/styles';
 import flush from 'styled-jsx/server';
 import theme from '../src/theme';
 
-// type InitialProps = PromiseResult<ReturnType<typeof getInitialProps>>
-
-// type MyGetInitialProps = DocumentInitialProps & {
-//   styles?: Node; // JSX.Element;
-// }
-
-type CustomInitialProps = {
-  styles: any;
-  html: string;
-  head?: (JSX.Element | null)[] | undefined;
-  dataOnly?: true | undefined;
-}
-
 class MyDocument extends Document {
-  static async getInitialProps (ctx: DocumentContext): Promise<CustomInitialProps> {
+  static async getInitialProps (ctx: DocumentContext) {
     {
       /**
            * Resolution order
@@ -60,12 +47,12 @@ class MyDocument extends Document {
     return {
       ...initialProps,
       // Styles fragment is rendered after the app and page rendering finish.
-      styles: (
+      styles: [(
         <Fragment>
           {sheets.getStyleElement()}
           {flush() || null}
         </Fragment>
-      ),
+      )],
     };
   };
 
